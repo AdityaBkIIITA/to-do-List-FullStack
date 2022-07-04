@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://admin-AdityaBwk:Aditya1304@cluster0.rslblht.mongodb.net/todoListDB', {
+mongoose.connect('mongodb+srv://admin-AdityaBk:Aditya1304@cluster0.cggvmrb.mongodb.net/todoListDB', {
   useNewUrlParser: true
 });
 
@@ -142,12 +142,6 @@ app.post("/delete", function(req, res) {
   }
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
-app.listen(port);
-
-app.listen(port || 3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server has started successfully");
 });
